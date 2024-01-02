@@ -46,8 +46,10 @@ p { font-family: 'Noto Sans KR', sans-serif; }
         display: flex; flex-direction: column; justify-content: center;
         color: #F6F6F6;
     }
-    .text-box > p { font-size: 1.5rem; font-weight: bold; margin-left: 20px;}
-    .text-box > span { font-size: 0.75rem; font-weight: bold; margin-top: 10px; margin-left: 20px;}
+    .text-box > p { opacity:0; transition: opacity 0.5s ease-in;
+        font-size: 1.5rem; font-weight: bold; margin-left: 20px;}
+    .text-box > span {  opacity: 0; transition: opacity 0.5s ease-in 0.5s;
+        font-size: 0.75rem; font-weight: bold; margin-top: 10px; margin-left: 20px;}
 
 @media screen and (min-width:768px)  {
     .img-box {
