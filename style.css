@@ -2,7 +2,7 @@
 a { text-decoration: none; }
 p { font-family: 'Noto Sans KR', sans-serif; }
 @font-face {
-    font-family: NanumSquare;
+    font-family: "NanumSquare";
     src: url("font/NanumSquareR.ttf") format("ttf");
 }
 /* --------------------헤더-------------------- */
@@ -12,12 +12,11 @@ p { font-family: 'Noto Sans KR', sans-serif; }
 }
     .logo {
         display: flex; align-items: center;
-        font-family: NanumSquare; font-size: 1.1rem;
         height: 100%; width: 40%;
     }
-    .logo > span > a {
-        padding: 20px; color: #F6F6F6;
-        font-size: 1.5rem; font-weight: bold;
+    .logo > a {
+        font-family: "NanumSquare"; color: #F6F6F6; font-size: 1.5rem; font-weight: bold;
+        padding: 20px;
     }
 /* --------------------섹션-1-------------------- */
 #section-1 {
@@ -31,7 +30,8 @@ p { font-family: 'Noto Sans KR', sans-serif; }
     right: 0; bottom: 0; margin-right: 20px;
     width: 33%; height: 43%;
     background: url("images/bg-img.svg") no-repeat;
-    background-size: contain; background-position:center; opacity: 0.7;
+    background-size: contain; background-position:center;
+    opacity: 0.7;
 }
     .img-box {
         width: 100%; height: 80%;
@@ -56,14 +56,14 @@ p { font-family: 'Noto Sans KR', sans-serif; }
     .text-box {
         width: 49%; right: 0; justify-content: flex-start;
     }
-    .text-box > p, .text-box > span {
-        margin: 0;
-    }
+    .text-box > p { font-size: 1.7rem; margin: 0; }
+    .text-box > span { font-size: 0.8rem; margin-left: 0; }
+
     #section-1::before {
         width: 25%; height: 50%;
     }
 }
-
+/* --------------------섹션-2-------------------- */
 #section-2 {
     width: 100%; height: 100vh;
     background-color: #79ABFF;
