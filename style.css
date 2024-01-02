@@ -41,14 +41,13 @@ p { font-family: 'Noto Sans KR', sans-serif; }
             object-fit: cover; opacity: 0.8;
         }
     .text-box {
-        width: 95%; height: 50%;
+        width: 100%; height: 50%;
         position: absolute; top: 35%;
         display: flex; flex-direction: column; justify-content: center;
-        margin-left: 20px;
         color: #F6F6F6;
     }
-    .text-box > p { font-size: 1.5rem; font-weight: bold; }
-    .text-box > span { font-size: 0.75rem; font-weight: bold; margin-top: 10px;}
+    .text-box > p { font-size: 1.5rem; font-weight: bold; margin-left: 20px;}
+    .text-box > span { font-size: 0.75rem; font-weight: bold; margin-top: 10px; margin-left: 20px;}
 
 @media screen and (min-width:768px) {
     .img-box {
@@ -56,6 +55,9 @@ p { font-family: 'Noto Sans KR', sans-serif; }
     }
     .text-box {
         width: 49%; right: 0; justify-content: flex-start;
+    }
+    .text-box > p, .text-box > span {
+        margin: 0;
     }
     #section-1::before {
         width: 25%; height: 50%;
