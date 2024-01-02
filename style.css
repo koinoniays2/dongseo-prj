@@ -55,7 +55,6 @@ p { font-family: 'Noto Sans KR', sans-serif; }
     }
     .text-box {
         width: 45%; right: 0; justify-content: flex-start;
-        border: 1px solid black;
     }
     .text-box > p { font-size: 1.7rem; margin: 0; }
     .text-box > span { font-size: 0.8rem; margin-left: 0; }
