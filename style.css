@@ -52,7 +52,7 @@ p { font-family: 'Noto Sans KR', sans-serif; }
 
 @media screen and (min-width:768px) {
     .img-box {
-        width: 90%; height: 100%;
+        width: 80%; height: 100%;
     }
     .text-box {
         width: 49%; right: 0; justify-content: flex-start;
