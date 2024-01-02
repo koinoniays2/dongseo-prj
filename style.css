@@ -41,7 +41,7 @@ p { font-family: 'Noto Sans KR', sans-serif; }
             object-fit: cover; opacity: 0.8;
         }
     .text-box {
-        width: 100%; height: 50%;
+        width: 95%; height: 50%;
         position: absolute; top: 35%;
         display: flex; flex-direction: column; justify-content: center;
         margin-left: 20px;
@@ -61,6 +61,7 @@ p { font-family: 'Noto Sans KR', sans-serif; }
         width: 25%; height: 50%;
     }
 }
+
 #section-2 {
     width: 100%; height: 100vh;
     background-color: #79ABFF;
