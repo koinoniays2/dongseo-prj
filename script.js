@@ -5,4 +5,13 @@ window.addEventListener("load", function(){
     })
     let textSpan = document.querySelector(".text-box > span");
     textSpan.style.opacity = 1;
+
+    window.addEventListener("scroll", function(){
+        let sassang = document.querySelector('.sassang');
+        if(sassang.getBoundingClientRect().top===0) {
+            sassang.classList.add("draw");
+        }else {
+            sassang.classList.remove("draw");
+        }
+    });
 })
