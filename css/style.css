@@ -1,6 +1,6 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 a { text-decoration: none; }
-p, span { font-family: 'Noto Sans KR', sans-serif; color: #F6F6F6;}
+p, span { font-family: 'Noto Sans KR', sans-serif; font-weight: bold; color: #F6F6F6;}
 @font-face {
     font-family: "NanumSquare";
     src: url("font/NanumSquareR.ttf") format("ttf");
@@ -27,7 +27,7 @@ p, span { font-family: 'Noto Sans KR', sans-serif; color: #F6F6F6;}
 /* 백그라운드 */
 .background-sky {
     width: 100%; height: 100vh;
-    background-image: url("../images/bg-sky2.jpg");
+    background-image: url("../images/bg-1.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -64,9 +64,9 @@ p, span { font-family: 'Noto Sans KR', sans-serif; color: #F6F6F6;}
         display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
     }
     .text-box > p { opacity:0; transition: opacity 0.3s ease-in;
-        font-size: 1.6rem; font-weight: bold; margin-left: 20px;}
+        font-size: 1.6rem; margin-left: 20px;}
     .text-box > span {  opacity: 0; transition: opacity 0.3s ease-in 0.3s;
-        font-size: 0.8rem; font-weight: bold; margin-top: 10px; margin-left: 20px;}
+        font-size: 0.8rem; margin-top: 10px; margin-left: 20px;}
 
 /* 섹션-1 테블릿 모드 */
 @media screen and (min-width:768px)  {
@@ -91,17 +91,19 @@ p, span { font-family: 'Noto Sans KR', sans-serif; color: #F6F6F6;}
 /* --------------------섹션-2-------------------- */
 #section-2 {
     width: 100%; height: 100vh;
+    overflow: hidden;
     position: relative;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     /* background-color: rgba(59, 148, 228, 0.3); */
     background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
-    overflow: hidden;
 }
 .sassang {
     width: 100%; height: 80%;
     padding: 100px 20px;
     opacity: 0.5;
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 3000;
 }
 /* 자바스크립트 라인 애니메이션 추가 부분 */
 .draw {
@@ -119,22 +121,24 @@ p, span { font-family: 'Noto Sans KR', sans-serif; color: #F6F6F6;}
 }
 /* 텍스트 */
 .text-box-2 {
-    width: 90%; position: absolute;
+    width: 300px;
+    position: absolute;
     display: flex; flex-direction: column; 
-    justify-content: center; align-items: center;
+    justify-content: center; align-items: flex-start;
     top: 50%; left: 50%; transform: translate(-50%, -50%);
 }
     .text-box-2 > p {
-        font-size: 1.7rem; font-weight: bold;
+        font-size: 1.7rem;
         padding: 10px 0;
     }
 /* 라인 */
 .border-line {
-    height: 2px; width: 320px; background-color: #F6F6F6;
+    height: 2px; width: 0; background-color: #F6F6F6;
 }
 
 /* 섹션-2 테블릿 모드 */
 @media screen and (min-width:768px) {
+    .text-box-2 { width: 450px; }
     .text-box-2 > p {
         font-size: 2.5rem;
     }
@@ -144,4 +148,66 @@ p, span { font-family: 'Noto Sans KR', sans-serif; color: #F6F6F6;}
         opacity: 0.5;
     }
 
+}
+/* --------------------섹션-3-------------------- */
+#section-3 {
+    width: 100%; height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0));
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+/* 백그라운드 */
+.background-green {
+    width: 100%; height: 100vh;
+    background-image: url("../images/bg-2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: absolute; top: 0; z-index: -999;
+}
+.background-green::after {
+    width: 100%; height: 100%;
+    content: ""; display: block;
+    position: absolute; top: 0; z-index: -1;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+/* 텍스트 */
+.text-box-3 {
+    margin: 30px 0 0 0;
+    display: flex; flex-wrap: wrap;
+    width: 80%;
+}
+.text-box-3 > p {
+    font-size: 1.2rem;
+}
+.text-box-3 > p:nth-child(3) {
+    margin-bottom: 10px;
+}
+/* 약재 이미지 */
+.img-box-2 {
+    width: 100%;
+    display: flex; justify-content: space-evenly;
+    object-fit: contain;
+}
+.img-box-2 > img{
+    width: 30%;
+}
+
+/* 섹션-3 테블릿 모드 */
+@media screen and (min-width:768px) {
+    .text-box-3 > p {
+        font-size: 1.6rem;
+    }
+}
+/* 섹션-3 피씨 모드 */
+@media screen and (min-width:1000px) {
+    .img-box-2 {
+        width: 90%;
+    }
+    .text-box-3 > p {
+        font-size: 2.2rem;
+    }
+    
 }
