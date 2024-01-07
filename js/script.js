@@ -22,6 +22,7 @@ window.addEventListener("load", function () {
     });
 
     // --------------------섹션-2--------------------
+    gsap.registerPlugin(ScrollTrigger);
     // 라인 애니메이션
     gsap.to(".sassang", {
         scrollTrigger: {
@@ -31,30 +32,30 @@ window.addEventListener("load", function () {
             toggleClass: "draw"// 추가 또는 제거할 클래스
         }
     });
-    gsap.registerPlugin(ScrollTrigger);
+
+    // 텍스트 애니메이션
     let tl = gsap.timeline();
-    // 텍스트
     tl.fromTo(".text-box-2", {
         opacity: 0,
-        y: "500"
+        x: -1000
     }, {
         opacity: 1,
-        y: "0",
-        delay: 0.5
-    })
+        x: 0,
+        duration: 1
+    }, "+=0.5")
     // 밑줄 라인
-    tl.to(".border-line", {
-        width: "100%",
-    });
+    .to(".border-line", {
+        width: "90%"
+    }, "-=0.25");
     // 스크롤 트리거 설정
     ScrollTrigger.create({
         trigger: "#section-2",
         start: "top center",
-        end: "center center",
+        end: "center-=100 center",
         animation: tl, // 위에서 만든 타임라인을 설정
-        scrub: 4
+        scrub: 5
     });
-    // ----------섹션-2----------
+    // --------------------섹션-3--------------------
     let tl2 = gsap.timeline({
         scrollTrigger: {
             trigger: "#section-3",
