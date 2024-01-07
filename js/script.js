@@ -71,19 +71,19 @@ window.addEventListener("load", function () {
         .to(text, {
             opacity: 1,
             stagger: 0.3
-        });
+        },"-=0.3");
         ScrollTrigger.create({
             trigger: "#section-3",
-            start: "top+=10% center",
-            end: "center center",
+            start: "top center",
+            end: "bottom center",
             toggleActions: "restart", // 재시작
             animation: tl, //스크롤트리거를 적용할 타임라인
-            onEnterBack: () => {
-                tl.reverse(); // end 지점을 역방향으로 들어갈 때 애니메이션 재시작
-            },
-            // onLeaveBack: () => {
-            //     tl.reverse(); // start 지점을 역방향으로 벗어날 때 호출될 함수
-            // }
+            // onEnterBack: () => {
+            //     tl.reverse(); // end 지점을 역방향으로 들어갈 때 애니메이션 재시작
+            // },
+            onLeaveBack: () => {
+                tl.reverse(); // start 지점을 역방향으로 벗어날 때 호출될 함수
+            }
         });
     }
     sectionThreeAni();
