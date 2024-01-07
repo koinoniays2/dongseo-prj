@@ -1,5 +1,5 @@
 window.addEventListener("load", function () {
-// --------------------섹션-1 텍스트--------------------
+    // --------------------섹션-1 텍스트--------------------
     let textP = document.querySelector(".text-box > p");
     let textSpan = document.querySelector(".text-box > span");
     let section = document.querySelector("#section-1");
@@ -21,7 +21,7 @@ window.addEventListener("load", function () {
         };
     });
 
-// --------------------섹션-2--------------------
+    // --------------------섹션-2--------------------
     gsap.registerPlugin(ScrollTrigger);
     // 라인 애니메이션
     gsap.to(".sassang", {
@@ -44,9 +44,9 @@ window.addEventListener("load", function () {
         duration: 1
     })
         // 밑줄 라인
-    .to(".border-line", {
-        width: "90%"
-    }, "-=0.3");
+        .to(".border-line", {
+            width: "90%"
+        }, "-=0.3");
     // 스크롤 트리거 설정
     ScrollTrigger.create({
         trigger: "#section-2",
@@ -55,32 +55,78 @@ window.addEventListener("load", function () {
         animation: tl, // 위에서 만든 타임라인을 설정
         scrub: 5
     });
-// --------------------섹션-3--------------------
-    let tl2 = gsap.timeline();
-    // 이미지 애니메이션
+    // --------------------섹션-3--------------------
     let clippingImg = document.querySelectorAll(".img-box-2 > img");
-    clippingImg.forEach((item) => {
-        tl2.fromTo(item, {
-            opacity: 0
-        }, {
-            opacity: 1
+    let text = document.querySelectorAll(".text-box-3 > p");
+    // 초기화 (from 상태)
+    gsap.set(clippingImg, { opacity: 0 });
+    gsap.set(text, { opacity: 0 });
+    // 이미지 & 텍스트 애니메이션
+    function sectionThreeAni() {
+        let tl = gsap.timeline();
+        tl.to(clippingImg, {
+            opacity: 1,
+            stagger: 0.3,
         })
-    });
-    // 텍스트 애니메이션
-    let text3 = document.querySelectorAll(".text-box-3 > p");
-    text3.forEach((item) => {
-        tl2.fromTo(item, {
-            opacity: 0,
-        }, {
-            opacity: 1
-        })
-    });
-    // 스크롤 트리거 설정
-    ScrollTrigger.create({
-        trigger: "#section-3",
-        start: "top center",
-        end: "center center",
-        animation: tl2, // 위에서 만든 타임라인을 설정
-        scrub: 5
-    });
+        .to(text, {
+            opacity: 1,
+            stagger: 0.3
+        });
+        ScrollTrigger.create({
+            trigger: "#section-3",
+            start: "top+=10% center",
+            end: "center center",
+            toggleActions: "restart", // 재시작
+            animation: tl, //스크롤트리거를 적용할 타임라인
+            onEnterBack: () => {
+                tl.reverse(); // end 지점을 역방향으로 들어갈 때 애니메이션 재시작
+            },
+            // onLeaveBack: () => {
+            //     tl.reverse(); // start 지점을 역방향으로 벗어날 때 호출될 함수
+            // }
+        });
+    }
+    sectionThreeAni();
+
+    // onEnter 애니메이션
+    // function enterAni() {
+    //     let tl = gsap.timeline();
+    //     tl.to(clippingImg, {
+    //         opacity: 1,
+    //         stagger: 0.3,
+    //     })
+    //     .to(text, {
+    //         opacity: 1,
+    //         stagger: 0.2
+    //     });
+    // }
+    // function leaveAni() {
+    //     let tl = gsap.timeline();
+    //     tl.to(text, {
+    //         opacity: 0
+    //     })
+    //     .to(clippingImg, {
+    //         opacity: 0,
+    //         duration: 0.1
+    //     });
+    // }
+    // // 스크롤 트리거
+    // ScrollTrigger.create({
+    //     trigger: "#section-3",
+    //     start: "top center",
+    //     end: "bottom top",
+    //     markers: true,
+    //     onEnter: () => {
+    //         enterAni(); // 스크롤이 start할 때 호출될 함수
+    //     },
+    //     onLeaveBack: () => {
+    //         leaveAni(); // 스크롤이 start 지점을 역방향 스크롤으로 벗어날 때 호출될 함수
+    //     },
+    //     onLeave: () => {
+    //         leaveAni(); // end지점을 만났을 때 호출될 함수
+    //     },
+    //     onEnterBack: () => {
+    //         enterAni(); // end지점을 역방향 스크롤로 들어갈 때 호출될 함수
+    //     }
+    // });
 });
