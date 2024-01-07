@@ -60,7 +60,7 @@ p, span { font-weight: bold; color: #F6F6F6; font-family: "BMDOHYEON"; }
     .text-box > p { opacity:0; transition: opacity 0.5s ease-in;
         /* text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5); */
         font-size: 1.4rem; margin-left: 20px;}
-        .text-box > p > strong { font-size: 120%; -webkit-text-stroke: 0.5px #79ABFF; }
+        .text-box > p > strong { font-size: 130%; -webkit-text-stroke: 0.5px #79ABFF; }
     .text-box > span { opacity: 0; transition: opacity 0.5s ease-in 0.4s;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5); letter-spacing: 1px; 
         font-size: 0.9rem; margin-top: 10px; margin-left: 20px;}
@@ -150,7 +150,7 @@ p, span { font-weight: bold; color: #F6F6F6; font-family: "BMDOHYEON"; }
         font-size: 1.4rem;
         padding: 10px 0;
     }
-        .text-box-2 > p > strong { font-size: 120%; -webkit-text-stroke: 0.5px #79ABFF; }
+        .text-box-2 > p > strong { font-size: 140%; -webkit-text-stroke: 0.5px #79ABFF; }
 /* 라인 */
 .border-line {
     height: 2px; width: 0; background-color: #F6F6F6;
@@ -215,7 +215,7 @@ p, span { font-weight: bold; color: #F6F6F6; font-family: "BMDOHYEON"; }
 .text-box-3 > p {
     font-size: 1.2rem;
 }
-    .text-box-3 > p > strong { font-size: 120%; -webkit-text-stroke: 0.5px #9FC715; }
+    .text-box-3 > p > strong { font-size: 150%; -webkit-text-stroke: 0.5px #9FC715; }
 
 /* 섹션-3 테블릿 모드 */
 @media screen and (min-width:768px) {
